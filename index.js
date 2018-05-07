@@ -42,7 +42,7 @@ SandboxWrapper.prototype._parse = function(r) {
     if (isNaN(t)) return this._onError(new Error("Incorrect callback_id field, callback_id should be a number"));
     if ("dapp_response" == e.type) {
         var i = this.callbacks[t];
-        if (!i) return this._onError(new Error("Asch can't find callback_id from vm"));
+        if (!i) return this._onError(new Error("ETM can't find callback_id from vm"));
         var a = e.error,
         n = e.response;
         delete this.callbacks[t],
@@ -50,12 +50,12 @@ SandboxWrapper.prototype._parse = function(r) {
     default)(i, a, n)
     } else if ("dapp_call" == e.type) {
         var o = e.message;
-        if (null == o) return this._onError(new Error("Asch can't find message for request from vm"));
+        if (null == o) return this._onError(new Error("ETM can't find message for request from vm"));
         o.dappId = this.id,
         this.apiHandler(o,
         function(r, e) {
             var i = {
-                type: "asch_response",
+                type: "etm_response",
                 callback_id: t,
                 error: r,
                 response: e || {}
@@ -90,7 +90,7 @@ SandboxWrapper.prototype.sendMessage = function(r, e) {
     var t = this._getCallbackCounter(),
     i = {
         callback_id: t,
-        type: "asch_call",
+        type: "etm_call",
         message: r
     };
     this.callbacks[t] = e,

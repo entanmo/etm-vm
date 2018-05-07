@@ -27,14 +27,14 @@ Sandbox.prototype.processParentMessage = function(e) {
             return void app.logger.error("Failed to convert callback_id to integer")
         }
         if (isNaN(t)) return void app.logger.error("Incorrect callback_id field, callback_id should be a number");
-        if ("asch_response" == a.type) {
+        if ("etm_response" == a.type) {
             if (! (n = this.callbacks[t])) return void app.logger.error("Can't find callback_id from parent");
             var r = a.error,
             i = a.response;
             delete this.callbacks[t],
             (0, _setImmediate3.
         default)(n, r, i)
-        } else if ("asch_call" == a.type) {
+        } else if ("etm_call" == a.type) {
             var n = function(e, a) {
                 var r = {
                     type: "dapp_response",

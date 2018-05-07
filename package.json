@@ -1,19 +1,18 @@
 {
-  "name": "asch-sandbox",
+  "name": "etm-vm",
   "version": "1.0.0",
-  "description": "asch sandbox which is used to run sidechain dapps",
+  "description": "entanmo VirtualMachine which is used to run sidechain dapps",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
     "build": "gulp"
   },
-  "author": "QingFeng Shan <sqf1225@foxmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "bignumber": "https://github.com/AschPlatform/bignumber/tarball/master",
+    "bignumber": "git+https://github.com/entanmo/bignumber.git",
     "change-case": "3.0.0",
-    "json-sql": "https://github.com/AschPlatform/json-sql/tarball/master",
+    "json-sql": "git+https://github.com/entanmo/json-sql.git",
     "tracer": "^0.8.11",
     "validate.js": "^0.12.0"
   },

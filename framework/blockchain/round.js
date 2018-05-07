@@ -19,7 +19,7 @@ function _interopRequireDefault(e) {
 }
 var async = require("async"),
 crypto = require("crypto"),
-AschJS = require("asch-js"),
+ETMJS = require("etm-js"),
 slots = require("../helpers/slots.js"),
 OutTransferManager = require("../helpers/outtransfer-manager.js"),
 private_ = {},
@@ -296,7 +296,7 @@ default.mark(function e(t) {
                     n = a[0],
                     s = a[1],
                     i = modules.blockchain.accounts.generateAddressByPublicKey(e.senderPublicKey),
-                    o = AschJS.transfer.createOutTransfer(i, app.meta.transactionId, e.id, n, s, t);
+                    o = ETMJS.transfer.createOutTransfer(i, app.meta.transactionId, e.id, n, s, t);
                     o.signatures = [];
                     var l = !0,
                     u = !1,
@@ -305,7 +305,7 @@ default.mark(function e(t) {
                         for (var p, d = (0, _getIterator3.
                     default)(app.config.secrets); ! (l = (p = d.next()).done); l = !0) {
                             var g = p.value;
-                            if (g !== t && o.signatures.push(AschJS.transfer.signOutTransfer(o, g)), o.signatures.length >= app.meta.unlockDelegates) break
+                            if (g !== t && o.signatures.push(ETMJS.transfer.signOutTransfer(o, g)), o.signatures.length >= app.meta.unlockDelegates) break
                         }
                     } catch(e) {
                         u = !0,
@@ -444,7 +444,7 @@ Round.prototype.onMessage = function(e) {
     } else if ("pendingOutTransfer" == e.topic) {
         var r = e.message;
         if (!private_.outTransferManager.has(r)) {
-            var a = AschJS.transfer.signOutTransfer(out);
+            var a = ETMJS.transfer.signOutTransfer(out);
             private_.outTransferManager.addPending(r),
             private_.outTransferManager.addSignature(r.id, a),
             modules.api.transport.message("otSignature", {
