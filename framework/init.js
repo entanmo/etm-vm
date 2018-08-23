@@ -84,7 +84,7 @@ module.exports = function(e, r) {
             e(null, r)
         },
         modules: ["sandbox", "bus", "sequence", "validator",
-        function(e, r) {
+        function(r, e) {
             var n = require("./modules.full.json"),
             a = []; (0, _keys2.
         default)(n).forEach(function(e) {
@@ -103,7 +103,7 @@ module.exports = function(e, r) {
             })
         }],
         ready: ["modules", "bus",
-        function(e, r) {
+        function(r, e) {
             ready = !0,
             (0, _asyncToGenerator3.
         default)(_regenerator2.
