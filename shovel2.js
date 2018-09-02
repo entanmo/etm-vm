@@ -157,7 +157,7 @@ default.mark(function e() {
                     contractTypeMapping: {},
                     feeMapping: {},
                     defaultFee: {
-                        currency: "XAS",
+                        currency: "ETM",
                         min: "10000000"
                     },
                     feePool: null,

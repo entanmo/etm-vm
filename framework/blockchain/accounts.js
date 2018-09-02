@@ -60,8 +60,8 @@ private_.addAccount = function(e, r) {
     e.address || (e.address = self.generateAddressByPublicKey(e.publicKey)),
     e.balance = e.balance || {},
     e.u_balance = e.u_balance || {},
-    e.balance.XAS = e.balance.XAS || 0,
-    e.u_balance.XAS = e.u_balance.XAS || 0,
+    e.balance.ETM = e.balance.ETM || 0,
+    e.u_balance.ETM = e.u_balance.ETM || 0,
     (r || private_).accounts.push(e);
     var t = (r || private_).accounts.length - 1;
     return (r || private_).accountsIndexById[e.address] = t,

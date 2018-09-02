@@ -76,7 +76,7 @@ private_.popLastBlock = function(e, t) {
             modules.blockchain.accounts.undoMerging({
                 publicKey: e.delegate,
                 balance: {
-                    XAS: a
+                    ETM: a
                 }
             },
             function(r) {

@@ -201,7 +201,7 @@ default.mark(function e(t) {
                         type: 1,
                         fee: "0",
                         args: (0, _stringify2.
-                    default)([e.currency, "XAS" === e.currency ? e.amount: e.amount2, e.id, modules.blockchain.accounts.generateAddressByPublicKey(e.senderPublicKey)])
+                    default)([e.currency, "ETM" === e.currency ? e.amount: e.amount2, e.id, modules.blockchain.accounts.generateAddressByPublicKey(e.senderPublicKey)])
                     },
                     t)
                 }),
