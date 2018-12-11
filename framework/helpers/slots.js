@@ -1,6 +1,6 @@
 "use strict";
 function beginEpochTime() {
-    return new Date(Date.UTC(2016, 5, 27, 20, 0, 0, 0))
+    return new Date(Date.UTC(2018, 9, 12, 12, 0, 0, 0))
 }
 function getEpochTime(e) {
     void 0 === e && (e = (new Date).getTime());
