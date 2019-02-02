@@ -351,7 +351,7 @@ function runDapp(e) {
         require: {
             external: !0,
             context: "sandbox",
-            builtin: ["assert", "crypto", "events", "os", "path", "punycode", "querystring", "string_decoder", "url", "util", "zlib", "async", "bignumber", "bytebuffer", "change-case", "sodium", "extend", "ip", "z-schema", "protocol-buffers", "etm-js"],
+            builtin: ["assert", "crypto", "events", "os", "path", "punycode", "querystring", "string_decoder", "url", "util", "zlib", "async", "bignumber", "bytebuffer", "change-case", "sodium-native", "extend", "ip", "z-schema", "protocol-buffers", "etm-js"],
             root: [rootDir, dappRootDir]
         }
     }).run(fs.readFileSync(entryFile), entryFile);
